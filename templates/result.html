@@ -6,13 +6,13 @@
     <p>Looks like a cat!</p>
     <p>Mood detected: {{ mood }}</p>
     <p>Likelihood of demise plotting: {{ score }}%</p>
-    <p>Possible assassination plan: {{ plan }}</p>
+    <p>Will soon be: {{ plan }}</p>
 {% else %}
     <p>This does not look like a cat.</p>
 {% endif %}
 
 
 
-<img src="{{ url_for('static', filename='uploads/' + filename) }}" width="300">
+<img src="data:image/png;base64,{{ image_data }}" width="300">
 <br><br>
 <a href="/">Try Another Cat</a>
