@@ -1,0 +1,18 @@
+<h1>Analysis Complete</h1>
+
+<p>The IMCPMD-inator thinks this is: <b>{{ label }}</b> with a ({{ confidence }}% degree of confidence)</p>
+
+{% if is_cat %}
+    <p>Looks like a cat!</p>
+    <p>Mood detected: {{ mood }}</p>
+    <p>Likelihood of demise plotting: {{ score }}%</p>
+    <p>Possible assassination plan: {{ plan }}</p>
+{% else %}
+    <p>This does not look like a cat.</p>
+{% endif %}
+
+
+
+<img src="{{ url_for('static', filename='uploads/' + filename) }}" width="300">
+<br><br>
+<a href="/">Try Another Cat</a>
