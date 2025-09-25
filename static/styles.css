@@ -1,0 +1,161 @@
+body {
+
+    background: linear-gradient(135deg, #a1c4fd, #fbc2eb);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+}
+
+@keyframes titlemove {
+
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+}
+
+.page-title {
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    position: fixed;
+    top: 0; 
+    animation: titlemove 10s infinite ease-in-out;
+
+}
+
+.image-preview {
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    text-align: center;
+    width: fit-content;
+    display: none; 
+    border: none;
+}
+
+.image-preview img {
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: black
+}
+
+.image-preview h3 {
+    font-family: Arial, sans-serif;
+}
+
+
+.container {
+  background: rgb(247, 197, 241);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+li {
+  color: red;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+
+
+/* GLOWING BUTTON CSS */
+
+label.glow-on-hover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 50px; 
+    width: 220px;
+    height: 45px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    
+}
+
+.glow-on-hover {
+
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    width: 220px;
+    height: 50px;
+    border: 3px solid black;
+    outline: none;
+    color: #000000;
+    background: #000000;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 25px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    border: none;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 25px;
+}
+
+.glow-on-hover:active {
+    color: #000000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: #000000;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}

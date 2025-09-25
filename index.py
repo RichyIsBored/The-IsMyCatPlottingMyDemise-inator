@@ -101,7 +101,7 @@ def analyse():
 
         return render_template("result.html", score=malice, plan=plan, label=label, confidence=confidence, is_cat=is_cat, mood=mood, filename=file.filename, image_data=img_b64)
     
-    flash("No file uploaded! Please choose a file.")
+    flash("Dude... I need an image to analyse.")
     return redirect(url_for("index"))  
 
 
