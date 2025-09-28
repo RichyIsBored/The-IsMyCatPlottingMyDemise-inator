@@ -12,19 +12,20 @@ body {
 @keyframes titlemove {
 
   0% {
-    transform: translateX(-100%);
-    opacity: 0;
+    transform: translateX(-110%);
+    opacity: 0.1;
   }
   50% {
     transform: translateX(0);
     opacity: 1;
   }
   100% {
-    transform: translateX(100%);
-    opacity: 0;
+    transform: translateX(110%);
+    opacity: 0.1;
   }
 
 }
+
 
 .page-title {
     font-family: Arial, sans-serif;
@@ -36,10 +37,22 @@ body {
 
 }
 
+.page-subheader {
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    position: fixed;
+    bottom: 0; 
+    animation: titlemove 10s infinite ease-in-out;
+    animation-delay: 5s;
+    animation-fill-mode: both;
+
+}
+
 .image-preview {
     margin: 20px auto;
     padding: 10px;
-    border: 2px dashed #ccc;
+    border: 2px  #000000;
     border-radius: 10px;
     text-align: center;
     width: fit-content;

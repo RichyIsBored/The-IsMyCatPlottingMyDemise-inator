@@ -1,18 +1,60 @@
-<h1>Analysis Complete</h1>
+<link href="/static/resultstyle.css" rel="stylesheet" />
 
-<p>The IMCPMD-inator thinks this is: <b>{{ label }}</b> with a ({{ confidence }}% degree of confidence)</p>
+<!DOCTYPE html>
 
-{% if is_cat %}
-    <p>Looks like a cat!</p>
-    <p>Mood detected: {{ mood }}</p>
-    <p>Likelihood of demise plotting: {{ score }}%</p>
-    <p>Will soon be: {{ plan }}</p>
-{% else %}
-    <p>This does not look like a cat.</p>
-{% endif %}
+<html>
+<head>
+  <title>Results</title>
+</head>
+
+<body>
+    <div class="results-contents">
+        <h1>Analysis Complete</h1>
+            <div class="analysis-box">
+                <table class="results-table">
+                    <tr>
+                        <th>Prediction:</th>
+                        <td>IMCPMD-inator thinks this is: <b>{{ label }}</b> with a ({{ confidence }}% degree of confidence)</td>
+
+                    </tr>
+                    {% if is_cat %}
+                    <tr>
+                        <th>Species Check:</th>
+                        <td>Looks like a cat!</td>
+                    </tr>
+                    <tr>
+                        <th>Mood:</th>
+                        <td>{{ mood }}</td>
+                    </tr>
+                    <tr>
+                        <th>Likelihood of Demise Plotting:</th>
+                        <td>{{ score }}</td>
+                    </tr>
+                    <tr>
+                        <th>Possible Plot:</th>
+                        <td>{{ plan }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <th>Species Check:</th>
+                        <th>This does not look like a cat.</th>
+                    </tr>
+                    {% endif %}
+                </table>
+                <div class="image-preview">
+                    <img src="data:image/png;base64,{{ image_data }}" width="300">
+                </div>
+            </div>
 
 
 
-<img src="data:image/png;base64,{{ image_data }}" width="300">
-<br><br>
-<a href="/">Try Another Cat</a>
+
+
+
+
+
+        <a href="/"> <button class="glow-on-hover"> Try Another Cat? </button> </a>
+    </div>
+</body>
+</html>
+

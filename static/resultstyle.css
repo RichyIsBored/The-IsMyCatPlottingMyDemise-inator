@@ -1,0 +1,170 @@
+body {
+
+    background: linear-gradient(135deg, #a1c4fd, #fbc2eb);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+}
+
+
+img {
+
+    margin-top: 20px;
+    border: #000000;
+    border-radius: 20px;
+    margin: 20px;
+
+}
+
+.analysis-box {
+    display: flex;
+    border: 20px solid #abd8ff;
+    border-radius: 12px;   
+    background: #abd8ff;
+
+
+}
+
+.image-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #abd8ff;
+    margin-left: 20px;
+}
+
+.results-contents {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+
+
+}
+
+.results-table {
+
+    margin: 20px auto;
+    width: 70%;
+    max-width: 600px;
+    background: white;
+    border: 5px solid #abd8ff;
+    border-radius: 12px;
+    overflow: hidden;
+
+}
+
+.results-table th {
+    background: #abd8ff;
+    color: #d279b3;
+    width: 30%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.results-table td {
+    background: #abd8ff;
+    color: #d279b3;
+    width: 40%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* GLOWING BUTTON CSS */
+
+label.glow-on-hover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 50px; 
+    width: 220px;
+    height: 45px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    
+}
+
+.glow-on-hover {
+
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    width: 220px;
+    height: 50px;
+    border: 3px solid black;
+    outline: none;
+    color: #000000;
+    background: #000000;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 25px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    border: none;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 25px;
+}
+
+.glow-on-hover:active {
+    color: #000000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: #000000;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
