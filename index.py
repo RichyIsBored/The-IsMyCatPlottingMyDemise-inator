@@ -108,6 +108,6 @@ def analyse():
 
 
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
+# The code below is for local development only and must be removed/commented for deployment to vercel
+#if __name__ == "__main__":
+#    app.run(debug=True)
